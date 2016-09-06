@@ -1,9 +1,12 @@
 ﻿using FourWeb.Abstraction.Domain.Entities;
+using System.Collections.Generic;
 
 namespace FourWeb.Business.Manager.Domain.Entities
 {
     public class Product : EntityBase
     {
+        private IList<TechnicalDetail> _technicalDetails;
+
         public Product(string title, string description, decimal price, int quantityOnHand, int category, string image = "")
         {
             this.Title = title;
@@ -12,6 +15,7 @@ namespace FourWeb.Business.Manager.Domain.Entities
             this.QuantityOnHand = quantityOnHand;
             this.CategoryId = category;
             this.Image = image;
+            this._technicalDetails = new List<TechnicalDetail>();
         }
 
         public int Id { get; private set; }
@@ -22,7 +26,16 @@ namespace FourWeb.Business.Manager.Domain.Entities
         public int CategoryId { get; private set; }
         public string Image { get; private set; }
         public Category Category { get; private set; }
-        public TechnicalDetailsProduct TechnicalDetails { get; private set; }
+        public ICollection<TechnicalDetail> TechnicalDetails
+        {
+            get { return _technicalDetails; }
+            private set { _technicalDetails = new List<TechnicalDetail>(value); }
+        }
+
+        public void AddTechnicalDetail(TechnicalDetail item)
+        {
+            _technicalDetails.Add(item);
+        }
 
         public void UpdatePrice(decimal price)
         {
