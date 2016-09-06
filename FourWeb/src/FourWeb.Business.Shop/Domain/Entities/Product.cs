@@ -1,6 +1,8 @@
-﻿namespace FourWeb.Business.Shop.Domain.Entities
+﻿using FourWeb.Abstraction.Domain.Entities;
+
+namespace FourWeb.Business.Shop.Domain.Entities
 {
-    public class Product
+    public class Product : EntityBase
     {
         public Product() { }
 

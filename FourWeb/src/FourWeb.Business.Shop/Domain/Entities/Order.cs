@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FourWeb.Business.Shop.Domain.Entities
 {
-    public class Order
+    public class Order : EntityBase
     {
         private IList<OrderItem> _orderItems;
 

@@ -1,6 +1,8 @@
-﻿namespace FourWeb.Business.Manager.Domain.Entities
+﻿using FourWeb.Abstraction.Domain.Entities;
+
+namespace FourWeb.Business.Manager.Domain.Entities
 {
-    public class Category
+    public class Category : EntityBase
     {
         protected Category() { }
 

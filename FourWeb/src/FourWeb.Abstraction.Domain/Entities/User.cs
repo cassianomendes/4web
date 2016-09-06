@@ -1,6 +1,6 @@
 ﻿namespace FourWeb.Abstraction.Domain.Entities
 {
-    public class User
+    public class User : EntityBase
     {
         protected User() { }
 

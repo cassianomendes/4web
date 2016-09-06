@@ -1,6 +1,8 @@
-﻿namespace FourWeb.Business.Manager.Domain.Entities
+﻿using FourWeb.Abstraction.Domain.Entities;
+
+namespace FourWeb.Business.Manager.Domain.Entities
 {
-    public class TechnicalDetailsProduct
+    public class TechnicalDetailsProduct : EntityBase
     {
         public int Id { get; set; }
         public string Name { get; set; }
