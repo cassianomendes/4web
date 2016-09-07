@@ -8,5 +8,11 @@ namespace FourWeb.Business.Shop.Domain.Entities
 {
     public class Shipping : EntityBase
     {
+        public Shipping()
+        {
+
+        }
+
+        public int Id { get; private set; }
     }
 }

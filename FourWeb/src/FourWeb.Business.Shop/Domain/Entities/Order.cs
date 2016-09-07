@@ -36,6 +36,8 @@ namespace FourWeb.Business.Shop.Domain.Entities
             }
         }
         public OrderStatus Status { get; set; }
+        public int PaymentId { get; private set; }
+        public Payment Payment { get; private set; }
 
         public void AddItem(OrderItem item)
         {
