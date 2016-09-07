@@ -32,11 +32,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
         {
             get
             {
-                decimal total = 0;
-                foreach (var item in _orderItems)
-                    total += (item.Price * item.Quantity);
-
-                return total;
+                return _orderItems.Sum(x => x.Subtotal);
             }
         }
         public OrderStatus Status { get; set; }
