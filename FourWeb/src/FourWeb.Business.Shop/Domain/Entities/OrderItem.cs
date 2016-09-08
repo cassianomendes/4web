@@ -20,6 +20,14 @@ namespace FourWeb.Business.Shop.Domain.Entities
         public int OrderId { get; private set; }
         public Order Order { get; private set; }
 
+        public decimal Subtotal
+        {
+            get
+            {
+                return this.Price * this.Quantity;
+            }
+        }
+
         public void AddProduct(Product product, int quantity, decimal price)
         {
             this.ProductId = product.Id;
