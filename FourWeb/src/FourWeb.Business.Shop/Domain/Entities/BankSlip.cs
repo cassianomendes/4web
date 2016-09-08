@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FourWeb.Business.Shop.Domain.Entities
 {
-    public class ProductPromotion : EntityBase
+    public class BankSlip : EntityBase
     {
     }
 }
