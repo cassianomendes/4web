@@ -12,6 +12,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
                 
         public int ProductId { get; private set; }
         public Product Product { get; private set; }
+
         public string ReviewerName { get; private set; }
         public DateTime ReviewDate { get; private set; }
         public string EmailAddress { get; private set; }

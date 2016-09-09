@@ -8,17 +8,20 @@ namespace FourWeb.Business.Shop.Domain.Entities
 {
     public class Order : EntityBase
     {
-        public Order(IList<OrderItem> orderItems, int userId)
+        public Order(IList<OrderItem> orderItems, int customer)
         {
             this.Date = DateTime.Now;            
             orderItems.ToList().ForEach(x => AddItem(x));
-            this.UserId = userId;
+            this.CustomerId = customer;
             this.Status = OrderStatus.Created;
-        }        
+        }
+
         public DateTime Date { get; private set; }
         public ICollection<OrderItem> OrderItems { get; private set; }
-        public int UserId { get; set; }
-        public User User { get; set; }
+
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
+
         public decimal Total
         {
             get
@@ -27,8 +30,15 @@ namespace FourWeb.Business.Shop.Domain.Entities
             }
         }
         public OrderStatus Status { get; set; }
+
         public int PaymentId { get; private set; }
         public Payment Payment { get; private set; }
+
+        public int ShippingId { get; private set; }
+        public Shipping Shipping { get; private set; }
+
+        public int DiscountCouponId { get; set; }
+        public DiscountCoupon DiscountCoupon { get; private set; }
 
         public void AddItem(OrderItem item)
         {

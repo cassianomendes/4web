@@ -5,8 +5,6 @@ namespace FourWeb.Business.Manager.Domain.Entities
 {
     public class Product : EntityBase
     {
-        private IList<TechnicalDetail> _technicalDetails;
-
         public Product(string title, string description, decimal price, int quantityOnHand, int category, string image = "")
         {
             this.Title = title;
@@ -15,9 +13,9 @@ namespace FourWeb.Business.Manager.Domain.Entities
             this.QuantityOnHand = quantityOnHand;
             this.CategoryId = category;
             this.Image = image;
-            this._technicalDetails = new List<TechnicalDetail>();
+            this.TechnicalDetails = new List<TechnicalDetail>();
         }
-        
+
         public string Title { get; private set; }
         public string Description { get; private set; }
         public decimal Price { get; private set; }
@@ -25,15 +23,12 @@ namespace FourWeb.Business.Manager.Domain.Entities
         public int CategoryId { get; private set; }
         public string Image { get; private set; }
         public Category Category { get; private set; }
-        public ICollection<TechnicalDetail> TechnicalDetails
-        {
-            get { return _technicalDetails; }
-            private set { _technicalDetails = new List<TechnicalDetail>(value); }
-        }
+        public ICollection<TechnicalDetail> TechnicalDetails { get; protected set; }
+        public ICollection<Product> RelatedProducts { get; protected set; }
 
         public void AddTechnicalDetail(TechnicalDetail item)
         {
-            _technicalDetails.Add(item);
+            this.TechnicalDetails.Add(item);
         }
 
         public void UpdatePrice(decimal price)

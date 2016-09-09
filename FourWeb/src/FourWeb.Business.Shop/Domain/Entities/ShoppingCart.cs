@@ -1,19 +1,16 @@
 ﻿using FourWeb.Abstraction.Domain.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FourWeb.Business.Shop.Domain.Entities
 {
     public class ShoppingCart : EntityBase
     {
-        public ShoppingCart()
+        protected ShoppingCart()
         {
-           ShoppingCartItems = new List<ShoppingCartItem>();
+            this.ShoppingCartItems = new List<ShoppingCartItem>();
         }
 
-        public ICollection<ShoppingCartItem> ShoppingCartItems { get; protected set; }        
-        public int Quantity { get; set; }
+        public ICollection<ShoppingCartItem> ShoppingCartItems { get; protected set; }
+        public int Quantity { get; private set; }
     }
 }

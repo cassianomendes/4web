@@ -10,7 +10,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
     {
         public OrderItem() { }        
         public int Quantity { get; private set; }
-        public decimal Price { get; private set; }
+        public decimal UnitCost { get; private set; }
 
         public int ProductId { get; private set; }
         public Product Product { get; private set; }
@@ -18,20 +18,23 @@ namespace FourWeb.Business.Shop.Domain.Entities
         public int OrderId { get; private set; }
         public Order Order { get; private set; }
 
+        public int ShoppingCartItemId { get; private set; }
+        public ShoppingCartItem ShoppingCartItem { get; private set; }
+
         public decimal Subtotal
         {
             get
             {
-                return this.Price * this.Quantity;
+                return this.UnitCost * this.Quantity;
             }
         }
 
-        public void AddProduct(Product product, int quantity, decimal price)
+        public void AddProduct(Product product, int quantity, decimal unitCost)
         {
             this.ProductId = product.Id;
             this.Product = product;
             this.Quantity = quantity;
-            this.Price = price;
+            this.UnitCost = unitCost;
 
             // Reserva o estoque
             this.Product.UpdateQuantityOnHand(this.Product.QuantityOnHand - quantity);
