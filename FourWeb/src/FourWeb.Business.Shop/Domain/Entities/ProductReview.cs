@@ -9,8 +9,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
         {
 
         }
-
-        public int Id { get; private set; }
+                
         public int ProductId { get; private set; }
         public Product Product { get; private set; }
         public string ReviewerName { get; private set; }

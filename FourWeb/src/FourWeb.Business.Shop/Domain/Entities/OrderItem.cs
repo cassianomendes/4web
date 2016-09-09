@@ -8,9 +8,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
 {
     public class OrderItem : EntityBase
     {
-        public OrderItem() { }
-
-        public int Id { get; private set; }
+        public OrderItem() { }        
         public int Quantity { get; private set; }
         public decimal Price { get; private set; }
 

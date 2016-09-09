@@ -11,9 +11,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
         public Payment()
         {
 
-        }
-
-        public int Id { get; private set; }
+        }        
         public DateTime Paid { get; private set; }
         public decimal Total { get; private set; }
     }

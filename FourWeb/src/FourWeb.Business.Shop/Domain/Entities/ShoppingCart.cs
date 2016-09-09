@@ -8,21 +8,12 @@ namespace FourWeb.Business.Shop.Domain.Entities
 {
     public class ShoppingCart : EntityBase
     {
-        private IList<ShoppingCartItem> _shoppingCartItems;
-
         public ShoppingCart()
         {
-            _shoppingCartItems = new List<ShoppingCartItem>();
+           ShoppingCartItems = new List<ShoppingCartItem>();
         }
 
-        public ICollection<ShoppingCartItem> ShoppingCartItems
-        {
-            get { return _shoppingCartItems; }
-            private set { _shoppingCartItems = new List<ShoppingCartItem>(value); }
-        }
-
-        public int Id { get; set; }
+        public ICollection<ShoppingCartItem> ShoppingCartItems { get; protected set; }        
         public int Quantity { get; set; }
-
     }
 }

@@ -8,8 +8,6 @@ namespace FourWeb.Business.Shop.Domain.Entities
 {
     public class Order : EntityBase
     {
-        private IList<OrderItem> _orderItems;
-
         public Order(IList<OrderItem> orderItems, int userId)
         {
             this.Date = DateTime.Now;
@@ -17,22 +15,16 @@ namespace FourWeb.Business.Shop.Domain.Entities
             orderItems.ToList().ForEach(x => AddItem(x));
             this.UserId = userId;
             this.Status = OrderStatus.Created;
-        }
-
-        public int Id { get; private set; }
+        }        
         public DateTime Date { get; private set; }
-        public ICollection<OrderItem> OrderItems
-        {
-            get { return _orderItems; }
-            private set { _orderItems = new List<OrderItem>(value); }
-        }
+        public ICollection<OrderItem> OrderItems { get; private set; }
         public int UserId { get; set; }
         public User User { get; set; }
         public decimal Total
         {
             get
             {
-                return _orderItems.Sum(x => x.Subtotal);
+                return OrderItems.Sum(x => x.Subtotal);
             }
         }
         public OrderStatus Status { get; set; }
@@ -41,7 +33,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
 
         public void AddItem(OrderItem item)
         {
-            _orderItems.Add(item);
+            OrderItems.Add(item);
         }
 
         public void MarkAsPaid()
@@ -54,7 +46,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
         {
             this.Status = OrderStatus.Delivered;
         }
-
+            
         public void Cancel()
         {
             // Estorna os produtos

@@ -8,9 +8,7 @@ namespace FourWeb.Business.Manager.Domain.Entities
         {
             this.Title = title;
             this.Description = description;
-        }
-
-        public int Id { get; private set; }
+        }        
         public string Title { get; private set; }
         public string Description { get; private set; }
 

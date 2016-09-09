@@ -8,9 +8,7 @@ namespace FourWeb.Business.Manager.Domain.Entities
         public SpecialOffer()
         {
 
-        }
-
-        public int Id { get; private set; }
+        }        
         public string Description { get; private set; }
         public decimal DiscountPercentage { get; private set; }
         public string Type { get; private set; }

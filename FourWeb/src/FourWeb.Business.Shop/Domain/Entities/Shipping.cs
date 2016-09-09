@@ -11,8 +11,6 @@ namespace FourWeb.Business.Shop.Domain.Entities
         public Shipping()
         {
 
-        }
-
-        public int Id { get; private set; }
+        }        
     }
 }

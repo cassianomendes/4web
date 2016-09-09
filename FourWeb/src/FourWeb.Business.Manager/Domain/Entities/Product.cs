@@ -17,8 +17,7 @@ namespace FourWeb.Business.Manager.Domain.Entities
             this.Image = image;
             this._technicalDetails = new List<TechnicalDetail>();
         }
-
-        public int Id { get; private set; }
+        
         public string Title { get; private set; }
         public string Description { get; private set; }
         public decimal Price { get; private set; }
