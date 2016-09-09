@@ -15,7 +15,10 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "FourWeb.Abstraction.Bootstrap": "1.0.0-*",
-    "FourWeb.Abstraction.Auth": "1.0.0-*"
+    "FourWeb.Abstraction.Auth": "1.0.0-*",
+    "Swashbuckle.SwaggerUi": "6.0.0-beta902",
+    "Swashbuckle.SwaggerGen": "6.0.0-beta902"
+
   },
 
   "tools": {

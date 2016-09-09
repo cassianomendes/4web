@@ -671,6 +671,22 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.Server.Kestrel.dll": {}
         }
       },
+      "Microsoft.AspNetCore.StaticFiles/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.WebEncoders": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.WebUtilities/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1005,6 +1021,19 @@
         },
         "runtime": {
           "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.dll": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "1.0.0",
+          "System.Runtime.Extensions": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Physical/1.0.0": {
@@ -1571,6 +1600,50 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Swashbuckle.Swagger/6.0.0-beta902": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.Swagger.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.SwaggerGen/6.0.0-beta902": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.0",
+          "Swashbuckle.Swagger": "6.0.0-beta902",
+          "System.Xml.XPath": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.SwaggerGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.SwaggerUi/6.0.0-beta902": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+          "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+          "Microsoft.Extensions.FileProviders.Embedded": "1.0.0",
+          "System.Xml.XPath": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.SwaggerUi.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.SwaggerUi.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -3401,7 +3474,7 @@
           "System.Xml.ReaderWriter": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Xml.XPath.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.dll": {}
@@ -4027,6 +4100,19 @@
         "lib/netstandard1.3/Microsoft.AspNetCore.Server.Kestrel.xml"
       ]
     },
+    "Microsoft.AspNetCore.StaticFiles/1.0.0": {
+      "sha512": "pXiUBJtpO0fIlGEg/ESykhbIZ2+I+9Y+3qXzN19zZDDF+tD88eATg3A5MHMXu/VmqaROLfvpGJmJ6uOLUGsBVQ==",
+      "type": "package",
+      "path": "Microsoft.AspNetCore.StaticFiles/1.0.0",
+      "files": [
+        "Microsoft.AspNetCore.StaticFiles.1.0.0.nupkg.sha512",
+        "Microsoft.AspNetCore.StaticFiles.nuspec",
+        "lib/net451/Microsoft.AspNetCore.StaticFiles.dll",
+        "lib/net451/Microsoft.AspNetCore.StaticFiles.xml",
+        "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll",
+        "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.xml"
+      ]
+    },
     "Microsoft.AspNetCore.WebUtilities/1.0.0": {
       "sha512": "D0licSnS1JgqQ/gYlN41wXbeYG3dFIdjY781YzMHZ5gBB7kczacshW+H6plZkXRr/cCnAJWGa31o1R8c5GEy/A==",
       "type": "package",
@@ -4321,6 +4407,17 @@
         "Microsoft.Extensions.FileProviders.Composite.nuspec",
         "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.dll",
         "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.xml"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/1.0.0": {
+      "sha512": "mMCI3/BLXAyBCDneqOI4ohETd0IXjbXZdoiCm1dYdnOdV193ByEOCFQ6/Vn9RVdU5UlC4Nn1P4J5Df7pXG/vGg==",
+      "type": "package",
+      "path": "Microsoft.Extensions.FileProviders.Embedded/1.0.0",
+      "files": [
+        "Microsoft.Extensions.FileProviders.Embedded.1.0.0.nupkg.sha512",
+        "Microsoft.Extensions.FileProviders.Embedded.nuspec",
+        "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.xml"
       ]
     },
     "Microsoft.Extensions.FileProviders.Physical/1.0.0": {
@@ -4790,7 +4887,7 @@
       ]
     },
     "runtime.native.System.Net.Http/4.0.1": {
-      "sha512": "qp61QywF74g6Cg+RnbG8yNRu/UCiQROWsbskeDHByuGa7HAO3itJjXHwBnaaPSZGR8cRy82OWoFY/PT4bVzojA==",
+      "sha512": "Nh0UPZx2Vifh8r+J+H2jxifZUD3sBrmolgiFWJd2yiNrxO0xTa6bAw3YwRn1VOiSen/tUXMS31ttNItCZ6lKuA==",
       "type": "package",
       "path": "runtime.native.System.Net.Http/4.0.1",
       "files": [
@@ -4802,7 +4899,7 @@
       ]
     },
     "runtime.native.System.Net.Security/4.0.1": {
-      "sha512": "FuHjiOxq+QRDG+CvUsKyTL/RvQa50Nr6pJk+wJoyK/Ja6nfjTjPrDOBiDXa/3jRVY4gndabE/mlM8lRrCl7QqA==",
+      "sha512": "Az6Ff6rZFb8nYGAaejFR6jr8ktt9f3e1Q/yKdw0pwHNTLaO/1eCAC9vzBoR9YAb0QeZD6fZXl1A9tRB5stpzXA==",
       "type": "package",
       "path": "runtime.native.System.Net.Security/4.0.1",
       "files": [
@@ -4823,6 +4920,39 @@
         "lib/netstandard1.0/_._",
         "runtime.native.System.Security.Cryptography.4.0.0.nupkg.sha512",
         "runtime.native.System.Security.Cryptography.nuspec"
+      ]
+    },
+    "Swashbuckle.Swagger/6.0.0-beta902": {
+      "sha512": "DAA0nU/XCLXjir9EPScRWjUBhTT88iS+2f9wQz5av524FhMAJOVG/N/vNvXj8QPObQdnK3ttW7k/wyota73yOQ==",
+      "type": "package",
+      "path": "Swashbuckle.Swagger/6.0.0-beta902",
+      "files": [
+        "Swashbuckle.Swagger.6.0.0-beta902.nupkg.sha512",
+        "Swashbuckle.Swagger.nuspec",
+        "lib/net451/Swashbuckle.Swagger.dll",
+        "lib/netstandard1.6/Swashbuckle.Swagger.dll"
+      ]
+    },
+    "Swashbuckle.SwaggerGen/6.0.0-beta902": {
+      "sha512": "zSHFHSf6KJ7yNwsYAibd1z0fqLVpueeax8wVwyLSZvMiUkfrNGnX/NhXKSzVltuGm3b52k7sG05mL9nwY3YvIA==",
+      "type": "package",
+      "path": "Swashbuckle.SwaggerGen/6.0.0-beta902",
+      "files": [
+        "Swashbuckle.SwaggerGen.6.0.0-beta902.nupkg.sha512",
+        "Swashbuckle.SwaggerGen.nuspec",
+        "lib/net451/Swashbuckle.SwaggerGen.dll",
+        "lib/netstandard1.6/Swashbuckle.SwaggerGen.dll"
+      ]
+    },
+    "Swashbuckle.SwaggerUi/6.0.0-beta902": {
+      "sha512": "qdxsxIw55cFGbng2F10soyS/eJK4MZW/M7jjoQIxUxOdpe+hG2EmNwWXijEPMwJJ5qcpB/QOc766LHtFPx9Ucg==",
+      "type": "package",
+      "path": "Swashbuckle.SwaggerUi/6.0.0-beta902",
+      "files": [
+        "Swashbuckle.SwaggerUi.6.0.0-beta902.nupkg.sha512",
+        "Swashbuckle.SwaggerUi.nuspec",
+        "lib/net451/Swashbuckle.SwaggerUi.dll",
+        "lib/netstandard1.6/Swashbuckle.SwaggerUi.dll"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -7345,7 +7475,7 @@
       ]
     },
     "System.Reflection.Emit.Lightweight/4.0.1": {
-      "sha512": "sLWbbKgdy4fwuWTc6gp3yYFM/ZgxpnCqekjFHUOpHC5oDW5ziiyDwx8LVDXiVJ+7X2JkmSYnWFkf1I1A88CmBw==",
+      "sha512": "sSzHHXueZ5Uh0OLpUQprhr+ZYJrLPA2Cmr4gn0wj9+FftNKXx8RIMKvO9qnjk2ebPYUjZ+F2ulGdPOsvj+MEjA==",
       "type": "package",
       "path": "System.Reflection.Emit.Lightweight/4.0.1",
       "files": [
@@ -8170,7 +8300,7 @@
       ]
     },
     "System.Security.Cryptography.Cng/4.2.0": {
-      "sha512": "79hJq88hGZXhQ1QGvVZ6yz2g7sbfldPmbNNBCxM3y2L80Ce5FEGUq4bPgJ0McLYQClj/d9OCFf1zvrnlKyJwaA==",
+      "sha512": "cUJ2h+ZvONDe28Szw3st5dOHdjndhJzQ2WObDEXAWRPEQBtVItVoxbXM/OEsTthl3cNn2dk2k0I3y45igCQcLw==",
       "type": "package",
       "path": "System.Security.Cryptography.Cng/4.2.0",
       "files": [
@@ -8196,7 +8326,7 @@
       ]
     },
     "System.Security.Cryptography.Csp/4.0.0": {
-      "sha512": "I1yh7Ndq10BQpIv5yjYg9/xkgHVpRMzMzmaz+rfeDDO6OOIe026H3W3xMF0bGos48LSp/sjT7iC93Ubd/FYSIA==",
+      "sha512": "/i1Usuo4PgAqgbPNC0NjbO3jPW//BoBlTpcWFD1EHVbidH21y4c1ap5bbEMSGAXjAShhMH4abi/K8fILrnu4BQ==",
       "type": "package",
       "path": "System.Security.Cryptography.Csp/4.0.0",
       "files": [
@@ -8265,7 +8395,7 @@
       ]
     },
     "System.Security.Cryptography.OpenSsl/4.0.0": {
-      "sha512": "wJ3IC9juNrrxigG45OYuB9swBbzfeJnTHbZZ/HNrqS1JIMlAqrOPQ5i7ln/9/Y+qg2+eVyfm7ZaRj1jQfbhphg==",
+      "sha512": "HUG/zNUJwEiLkoURDixzkzZdB5yGA5pQhDP93ArOpDPQMteURIGERRNzzoJlmTreLBWr5lkFSjjMSk8ySEpQMw==",
       "type": "package",
       "path": "System.Security.Cryptography.OpenSsl/4.0.0",
       "files": [
@@ -9385,7 +9515,9 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
-      "Microsoft.NETCore.App >= 1.0.0"
+      "Microsoft.NETCore.App >= 1.0.0",
+      "Swashbuckle.SwaggerGen >= 6.0.0-beta902",
+      "Swashbuckle.SwaggerUi >= 6.0.0-beta902"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

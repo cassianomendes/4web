@@ -28,13 +28,17 @@ namespace FourWeb.Api
         public void ConfigureServices(IServiceCollection services)
         {        
             services.AddMvc();
+            services.AddSwaggerGen();
         }
        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            
+
+            app.UseSwagger();
+            app.UseSwaggerUi();
+
             app.UseMvc();
         }
     }

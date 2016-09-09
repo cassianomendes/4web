@@ -10,8 +10,7 @@ namespace FourWeb.Business.Shop.Domain.Entities
     {
         public Order(IList<OrderItem> orderItems, int userId)
         {
-            this.Date = DateTime.Now;
-            this._orderItems = new List<OrderItem>();
+            this.Date = DateTime.Now;            
             orderItems.ToList().ForEach(x => AddItem(x));
             this.UserId = userId;
             this.Status = OrderStatus.Created;
