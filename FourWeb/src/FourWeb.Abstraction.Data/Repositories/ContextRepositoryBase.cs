@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FourWeb.Abstraction.Data.Repositories
 {
-    public class ContextRepositoryBase<T> where T : EntityBase
+    public abstract class ContextRepositoryBase<T> where T : EntityBase
     {
         private readonly DbContext _context;
         protected DbSet<T> Entity { get; private set; }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FourWeb.Abstraction.Data.Repositories
 {
-    public class RepositoryQueryBase<T> : ContextRepositoryBase<T>, IRepositoryQueryBase<T> where T : EntityBase
+    public abstract class RepositoryQueryBase<T> : ContextRepositoryBase<T>, IRepositoryQueryBase<T> where T : EntityBase
     {        
         public RepositoryQueryBase(DbContext context) 
             : base(context)

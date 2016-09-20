@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FourWeb.Abstraction.Data.Repositories
 {
-    public class RepositoryBase<T> : ContextRepositoryBase<T>, IRepositoryBase<T> where T : EntityBase
+    public abstract class RepositoryBase<T> : ContextRepositoryBase<T>, IRepositoryBase<T> where T : EntityBase
     {
         public RepositoryBase(DbContext context) 
             : base(context)
