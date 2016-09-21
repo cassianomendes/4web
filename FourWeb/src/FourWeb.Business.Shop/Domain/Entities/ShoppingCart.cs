@@ -12,5 +12,6 @@ namespace FourWeb.Business.Shop.Domain.Entities
 
         public ICollection<ShoppingCartItem> ShoppingCartItems { get; protected set; }
         public int Quantity { get; private set; }
+        public Customer Customer { get; private set; }        
     }
 }

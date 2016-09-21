@@ -1,4 +1,4 @@
-﻿using FourWeb.Abstraction.Domain.Entities;
+﻿    using FourWeb.Abstraction.Domain.Entities;
 using System;
 
 namespace FourWeb.Business.Manager.Domain.Entities

@@ -18,9 +18,6 @@ namespace FourWeb.Business.Shop.Domain.Entities
         public int OrderId { get; private set; }
         public Order Order { get; private set; }
 
-        public int ShoppingCartItemId { get; private set; }
-        public ShoppingCartItem ShoppingCartItem { get; private set; }
-
         public decimal Subtotal
         {
             get

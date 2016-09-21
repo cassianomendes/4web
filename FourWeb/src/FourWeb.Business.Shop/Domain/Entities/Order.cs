@@ -18,10 +18,8 @@ namespace FourWeb.Business.Shop.Domain.Entities
 
         public DateTime Date { get; private set; }
         public ICollection<OrderItem> OrderItems { get; private set; }
-
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
-
+        public Customer Customer { get; set; }        
         public decimal Total
         {
             get
@@ -33,6 +31,8 @@ namespace FourWeb.Business.Shop.Domain.Entities
 
         public int PaymentId { get; private set; }
         public Payment Payment { get; private set; }
+        public int PaymentMethodId { get; private set; }
+        public PaymentMethod PaymentMethod { get; private set; }
 
         public int ShippingId { get; private set; }
         public Shipping Shipping { get; private set; }

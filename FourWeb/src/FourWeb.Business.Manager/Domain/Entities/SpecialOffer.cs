@@ -8,14 +8,11 @@ namespace FourWeb.Business.Manager.Domain.Entities
         public SpecialOffer()
         {
 
-        }        
+        }
+        public string Title { get; private set; }
         public string Description { get; private set; }
-        public decimal DiscountPercentage { get; private set; }
-        public string Type { get; private set; }
-        public string Category { get; private set; }
+        public decimal DiscountPercentage { get; private set; }        
         public DateTime StartDate { get; private set; }
-        public DateTime EndDate { get; private set; }
-        public int MinQuantity { get; private set; }
-        public int MaxQuantity { get; private set; }
+        public DateTime EndDate { get; private set; }       
     }
 }
