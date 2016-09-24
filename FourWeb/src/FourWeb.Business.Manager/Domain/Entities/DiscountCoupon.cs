@@ -7,9 +7,8 @@ namespace FourWeb.Business.Manager.Domain.Entities
         protected DiscountCoupon()
         {
         }
-
-        public string Title { get; private set; }
         public decimal Discount { get; private set; }
+        public string Title { get; private set; }
         public string Code { get; private set; }
 
         public static DiscountCoupon Create(string title, decimal discount, string code)

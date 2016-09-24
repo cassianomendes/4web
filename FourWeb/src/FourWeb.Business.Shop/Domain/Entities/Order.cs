@@ -8,6 +8,11 @@ namespace FourWeb.Business.Shop.Domain.Entities
 {
     public class Order : EntityBase
     {
+        protected Order()
+        {
+
+        }
+
         public Order(IList<OrderItem> orderItems, int customer)
         {
             this.Date = DateTime.Now;            

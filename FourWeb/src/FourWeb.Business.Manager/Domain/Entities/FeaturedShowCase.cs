@@ -7,21 +7,19 @@ using System.Threading.Tasks;
 namespace FourWeb.Business.Manager.Domain.Entities
 {
     public class FeaturedShowCase : EntityBase
-    {
-        public int ProductId { get; private set; }
-        public Product Product { get; private set; }
+    {        
+        public ICollection<Product> Products { get; private set; }
 
         protected FeaturedShowCase()
         {
 
         }
 
-        public static FeaturedShowCase Create(Product product)
+        public static FeaturedShowCase Create(IList<Product> products)
         {
             return new FeaturedShowCase()
             {
-                ProductId = product.Id,
-                Product = product
+                Products = products
             };
         }
     }

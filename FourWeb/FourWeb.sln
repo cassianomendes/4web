@@ -40,6 +40,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FourWeb.Infrastructure", "s
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FourWeb.ExternalServices", "src\FourWeb.ExternalServices\FourWeb.ExternalServices.xproj", "{CB1CF47F-2AD6-4EEB-B68B-1D4E2A36ABF3}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FourWeb.Migrations", "src\FourWeb.Migrations\FourWeb.Migrations.xproj", "{DE0A4273-61C9-4E9D-8265-0A86C377A760}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{CB1CF47F-2AD6-4EEB-B68B-1D4E2A36ABF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB1CF47F-2AD6-4EEB-B68B-1D4E2A36ABF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB1CF47F-2AD6-4EEB-B68B-1D4E2A36ABF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0A4273-61C9-4E9D-8265-0A86C377A760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0A4273-61C9-4E9D-8265-0A86C377A760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0A4273-61C9-4E9D-8265-0A86C377A760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0A4273-61C9-4E9D-8265-0A86C377A760}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,5 +120,6 @@ Global
 		{67D272B9-5616-46D5-B112-DB2D88B79788} = {BBE77653-F8BB-4C7B-836D-C6495A156326}
 		{E277F6AE-736F-4137-B681-9A38901246DE} = {BBE77653-F8BB-4C7B-836D-C6495A156326}
 		{CB1CF47F-2AD6-4EEB-B68B-1D4E2A36ABF3} = {BBE77653-F8BB-4C7B-836D-C6495A156326}
+		{DE0A4273-61C9-4E9D-8265-0A86C377A760} = {BBE77653-F8BB-4C7B-836D-C6495A156326}
 	EndGlobalSection
 EndGlobal

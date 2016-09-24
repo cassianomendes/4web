@@ -4,12 +4,14 @@ namespace FourWeb.Business.Shop.Domain.Entities
 {
     public class Product : EntityBase
     {
-        public Product() { }        
-        public int QuantityOnHand { get; private set; }
+        protected Product()
+        {
+        }        
+        public int QuantityOnHand { get; private set; }        
 
         public void UpdateQuantityOnHand(int amount)
         {
             this.QuantityOnHand = amount;
-        }
+        }        
     }
 }

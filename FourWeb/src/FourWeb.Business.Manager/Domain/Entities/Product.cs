@@ -14,6 +14,7 @@ namespace FourWeb.Business.Manager.Domain.Entities
             this.CategoryId = category;
             this.Image = image;
             this.TechnicalDetails = new List<TechnicalDetail>();
+            this.RelatedProducts = new List<Product>();
         }
 
         public string Title { get; private set; }
@@ -25,6 +26,7 @@ namespace FourWeb.Business.Manager.Domain.Entities
         public Category Category { get; private set; }
         public ICollection<TechnicalDetail> TechnicalDetails { get; protected set; }
         public ICollection<Product> RelatedProducts { get; protected set; }
+        public ICollection<SpecialOfferProduct> SpecialOfferProduct { get; protected set; }
 
         public void AddTechnicalDetail(TechnicalDetail item)
         {
