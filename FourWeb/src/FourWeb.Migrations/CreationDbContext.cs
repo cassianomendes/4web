@@ -10,20 +10,16 @@ namespace FourWeb.Migrations
 {
     public class CreationDbContext : DbContext
     {
+        private readonly string _connectionString;
         public CreationDbContext()
             : base()
         {
+            _connectionString = "Server=(localdb)\\mssqllocaldb;Database=fourweb;Trusted_Connection=True;MultipleActiveResultSets=true";
             Database.Migrate();            
-        }
-
-        public CreationDbContext(DbContextOptions options)
-            : base(options)
-        {            
-            Database.Migrate();            
-        }
+        }       
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=fourweb;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer(_connectionString);
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
