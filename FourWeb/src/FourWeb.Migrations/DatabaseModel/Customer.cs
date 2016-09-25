@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FourWeb.DatabaseModel
+namespace FourWeb.Migrations.DatabaseModel
 {
     public class Customer : User
     {

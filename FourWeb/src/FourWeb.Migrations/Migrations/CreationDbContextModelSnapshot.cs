@@ -36,7 +36,7 @@ namespace FourWeb.Migrations.Migrations
                     b.HasDiscriminator<bool>("IsCustomer").HasValue(false);
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Address", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -64,23 +64,19 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("Address");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Category", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("CategoryId");
 
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.DiscountCoupon", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.DiscountCoupon", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -96,7 +92,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("DiscountCoupon");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.FeaturedShowCase", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.FeaturedShowCase", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -106,7 +102,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("FeaturedShowCase");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Order", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -140,7 +136,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.OrderItem", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -162,7 +158,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("OrderItem");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Payment", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Payment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -181,7 +177,7 @@ namespace FourWeb.Migrations.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Payment");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.PaymentMethod", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.PaymentMethod", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -195,7 +191,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("PaymentMethod");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Product", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -227,7 +223,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Shipping", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Shipping", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -245,7 +241,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("Shipping");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.ShoppingCart", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -261,7 +257,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("ShoppingCart");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.ShoppingCartItem", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.ShoppingCartItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -281,7 +277,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("ShoppingCartItem");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.SpecialOffer", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.SpecialOffer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -301,7 +297,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("SpecialOffer");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.SpecialOfferProduct", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.SpecialOfferProduct", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -321,7 +317,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("SpecialOfferProduct");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.TechnicalDetail", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.TechnicalDetail", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -339,7 +335,7 @@ namespace FourWeb.Migrations.Migrations
                     b.ToTable("TechnicalDetail");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Customer", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Customer", b =>
                 {
                     b.HasBaseType("FourWeb.Abstraction.Domain.Entities.User");
 
@@ -354,9 +350,9 @@ namespace FourWeb.Migrations.Migrations
                     b.HasDiscriminator().HasValue(true);
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.BankSlip", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.BankSlip", b =>
                 {
-                    b.HasBaseType("FourWeb.DatabaseModel.Payment");
+                    b.HasBaseType("FourWeb.Migrations.DatabaseModel.Payment");
 
 
                     b.ToTable("BankSlip");
@@ -364,9 +360,9 @@ namespace FourWeb.Migrations.Migrations
                     b.HasDiscriminator().HasValue("BankSlip");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.CreditCard", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.CreditCard", b =>
                 {
-                    b.HasBaseType("FourWeb.DatabaseModel.Payment");
+                    b.HasBaseType("FourWeb.Migrations.DatabaseModel.Payment");
 
                     b.Property<string>("CardNumber");
 
@@ -385,119 +381,112 @@ namespace FourWeb.Migrations.Migrations
                     b.HasDiscriminator().HasValue("CreditCard");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Address", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Address", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Customer")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Customer")
                         .WithMany("ShippingAddress")
                         .HasForeignKey("CustomerId");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Category", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Order", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Category")
-                        .WithMany("SubCategories")
-                        .HasForeignKey("CategoryId");
-                });
-
-            modelBuilder.Entity("FourWeb.DatabaseModel.Order", b =>
-                {
-                    b.HasOne("FourWeb.DatabaseModel.Customer", "Customer")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("FourWeb.DatabaseModel.DiscountCoupon", "DiscountCoupon")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.DiscountCoupon", "DiscountCoupon")
                         .WithMany()
                         .HasForeignKey("DiscountCouponId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("FourWeb.DatabaseModel.Payment", "Payment")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Payment", "Payment")
                         .WithMany()
                         .HasForeignKey("PaymentId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("FourWeb.DatabaseModel.PaymentMethod", "PaymentMethod")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.PaymentMethod", "PaymentMethod")
                         .WithMany()
                         .HasForeignKey("PaymentMethodId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("FourWeb.DatabaseModel.Shipping", "Shipping")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Shipping", "Shipping")
                         .WithMany()
                         .HasForeignKey("ShippingId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.OrderItem", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.OrderItem", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Order", "Order")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("FourWeb.DatabaseModel.Product", "Product")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Product", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Product", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Category", "Category")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("FourWeb.DatabaseModel.FeaturedShowCase")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.FeaturedShowCase")
                         .WithMany("Products")
                         .HasForeignKey("FeaturedShowCaseId");
 
-                    b.HasOne("FourWeb.DatabaseModel.Product")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Product")
                         .WithMany("RelatedProducts")
                         .HasForeignKey("ProductId");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.Shipping", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.Shipping", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Address", "Address")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.ShoppingCart", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.ShoppingCart", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Customer", "Customer")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerId");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.ShoppingCartItem", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.ShoppingCartItem", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Product", "Product")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("FourWeb.DatabaseModel.ShoppingCart")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.ShoppingCart")
                         .WithMany("ShoppingCartItems")
                         .HasForeignKey("ShoppingCartId");
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.SpecialOfferProduct", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.SpecialOfferProduct", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Product", "Product")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Product", "Product")
                         .WithMany("SpecialOfferProduct")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("FourWeb.DatabaseModel.SpecialOffer", "SpecialOffer")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.SpecialOffer", "SpecialOffer")
                         .WithMany("SpecialOfferProducts")
                         .HasForeignKey("SpecialOfferId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("FourWeb.DatabaseModel.TechnicalDetail", b =>
+            modelBuilder.Entity("FourWeb.Migrations.DatabaseModel.TechnicalDetail", b =>
                 {
-                    b.HasOne("FourWeb.DatabaseModel.Product")
+                    b.HasOne("FourWeb.Migrations.DatabaseModel.Product")
                         .WithMany("TechnicalDetails")
                         .HasForeignKey("ProductId");
                 });

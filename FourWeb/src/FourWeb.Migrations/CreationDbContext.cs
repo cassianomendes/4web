@@ -1,5 +1,5 @@
 ﻿using FourWeb.Abstraction.Domain.Entities;
-using FourWeb.DatabaseModel;
+using FourWeb.Migrations.DatabaseModel;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,7 @@ namespace FourWeb.Migrations
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>();
-            modelBuilder.Entity<Category>();
+            modelBuilder.Entity<Category>();            
             modelBuilder.Entity<TechnicalDetail>();            
             modelBuilder.Entity<FeaturedShowCase>();
             modelBuilder.Entity<PaymentMethod>();

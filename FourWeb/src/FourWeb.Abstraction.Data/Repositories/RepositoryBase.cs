@@ -25,6 +25,16 @@ namespace FourWeb.Abstraction.Data.Repositories
             Entity.Remove(entity);
         }
 
+        public T GetById(int id)
+        {
+            return Entity.Where(e => e.Id == id).FirstOrDefault();
+        }
+
+        public void Save()
+        {
+            SaveChanges();
+        }
+
         public void Update(T entity)
         {
             Entity.Update(entity);

@@ -11,5 +11,7 @@ namespace FourWeb.Abstraction.Domain.Interfaces.Repositories
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
+        T GetById(int id);
+        void Save();
     }
 }

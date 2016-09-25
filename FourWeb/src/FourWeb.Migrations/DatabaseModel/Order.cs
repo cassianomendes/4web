@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FourWeb.DatabaseModel
+namespace FourWeb.Migrations.DatabaseModel
 {
     public class Order : EntityBase
     {

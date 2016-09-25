@@ -1,6 +1,6 @@
 ﻿using FourWeb.Business.Shop.Domain.ValueObjects;
 
-namespace FourWeb.DatabaseModel
+namespace FourWeb.Migrations.DatabaseModel
 {
     public class CreditCard : Payment
     {

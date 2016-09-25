@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace FourWeb.DatabaseModel
+namespace FourWeb.Migrations.DatabaseModel
 {
     public class SpecialOffer : EntityBase
     {

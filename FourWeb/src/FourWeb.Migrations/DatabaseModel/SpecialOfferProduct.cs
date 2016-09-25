@@ -1,7 +1,7 @@
 ﻿using FourWeb.Abstraction.Domain.Entities;
 using System;
 
-namespace FourWeb.DatabaseModel
+namespace FourWeb.Migrations.DatabaseModel
 {
     public class SpecialOfferProduct : EntityBase
     {

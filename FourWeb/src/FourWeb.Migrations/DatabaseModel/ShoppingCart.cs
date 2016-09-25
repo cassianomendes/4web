@@ -1,7 +1,7 @@
 ﻿using FourWeb.Abstraction.Domain.Entities;
 using System.Collections.Generic;
 
-namespace FourWeb.DatabaseModel
+namespace FourWeb.Migrations.DatabaseModel
 {
     public class ShoppingCart : EntityBase
     {    

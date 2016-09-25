@@ -1,6 +1,6 @@
 ﻿using FourWeb.Abstraction.Domain.Entities;
 
-namespace FourWeb.DatabaseModel
+namespace FourWeb.Migrations.DatabaseModel
 {
     public class DiscountCoupon : EntityBase
     {

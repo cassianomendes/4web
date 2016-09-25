@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using FourWeb.Abstraction.Bootstrap.Extensions;
 
 namespace FourWeb.Api
 {
@@ -26,9 +27,11 @@ namespace FourWeb.Api
 
         
         public void ConfigureServices(IServiceCollection services)
-        {        
+        {
+            services.AddSingleton(Configuration);
             services.AddMvc();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen();                        
+            services.AddModules();
         }
        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
