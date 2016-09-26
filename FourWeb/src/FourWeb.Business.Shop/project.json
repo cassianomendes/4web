@@ -4,7 +4,8 @@
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "FourWeb.Abstraction.Data": "1.0.0-*",
-    "FourWeb.Abstraction.Domain": "1.0.0-*"
+    "FourWeb.Abstraction.Domain": "1.0.0-*",
+    "Microsoft.AspNetCore.Mvc": "1.0.0"
   },
 
   "frameworks": {
