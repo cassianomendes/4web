@@ -1,4 +1,8 @@
 ﻿using FourWeb.Business.Shop.Data.Contexts;
+using FourWeb.Business.Shop.Data.Repositories;
+using FourWeb.Business.Shop.Domain.Repositories;
+using FourWeb.Business.Shop.Domain.Services;
+using FourWeb.ExternalServices.Correios;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FourWeb.Business.Shop.Extensions
@@ -13,8 +17,9 @@ namespace FourWeb.Business.Shop.Extensions
         {
             services.AddShopContexts();
 
-            //services.AddScoped<CategoryService>();
-            //services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ShoppingCartService>();
+            services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
+            services.AddScoped<CorreiosService>();
         }
     }
 }

@@ -6,7 +6,10 @@ namespace FourWeb.Business.Shop.Domain.Entities
     {
         protected Product()
         {
-        }        
+        }
+
+        public string Title { get; private set; }
+        public decimal Price { get; private set; }
         public int QuantityOnHand { get; private set; }        
 
         public void UpdateQuantityOnHand(int amount)

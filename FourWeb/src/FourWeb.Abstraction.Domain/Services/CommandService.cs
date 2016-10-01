@@ -29,7 +29,7 @@ namespace FourWeb.Abstraction.Domain.Services
 
         public virtual void Delete(T entity)
         {
-            _repository.Update(entity);
+            _repository.Delete(entity);
             _repository.Save();
         }
     }

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FourWeb.Business.Shop.Domain.Entities;
+using FourWeb.Business.Shop.InputModels;
 
 namespace FourWeb.Business.Shop.Mappings
 {
@@ -11,7 +13,7 @@ namespace FourWeb.Business.Shop.Mappings
 
         private void FromInputModelToDomainModel()
         {
-            //CreateMap<CategoryInputModel, Category>();
+            CreateMap<ShoppingCartItemInputModel, ShoppingCartItem>();
         }
     }
 }
