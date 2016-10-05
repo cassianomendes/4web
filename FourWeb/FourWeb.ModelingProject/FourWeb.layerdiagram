@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="26d37a80-f96f-4125-8144-eb36ed28bce1" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="9b370da0-316a-42f7-8f40-0e0b6eba47c5" name="Presentation Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b83976da-e7ed-428c-8c51-fc0fca0e4cd9" direction="Forward">
+          <layerMoniker Id="23583ef3-70b3-4308-8b4f-0e96593818ef" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="aa37503e-9e65-4e8e-998f-2df7c2caec3d" direction="Forward">
+          <layerMoniker Id="2051f428-d966-45d5-a2a8-99b2936512e6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="fc91f7dc-21d6-44d4-b057-ecd50c56bc5b" name="FourWeb.Api" />
+        <layer Id="52a23565-e8c3-4110-b8d9-040257e1a401" name="FourWeb.FrontEnd" />
+      </childLayers>
+    </layer>
+    <layer Id="2051f428-d966-45d5-a2a8-99b2936512e6" name="Infrastructure Layer">
+      <childLayers>
+        <layer Id="d9a34858-d285-4fc0-b90b-760f7d9e109e" name="FourWeb.Abstraction.Auth" />
+        <layer Id="0c8bb2ce-0ad7-462c-9f51-5b5aee3939db" name="FourWeb.Abstraction.Data" />
+        <layer Id="18228d48-ccfe-4ac8-ac13-7e3a25f20fb9" name="FourWeb.Abstraction.Bootstrap" />
+        <layer Id="f75ef810-ed4b-443e-b3e2-b65069eaa6d6" name="FourWeb.Abstraction.Domain" />
+        <layer Id="7045f85a-c8dd-4e36-84f9-5f460c54cad8" name="FourWeb.Migrations" />
+        <layer Id="08b9e86b-7df8-4b60-ad8a-f2eda0d1196a" name="FourWeb.Infrastructure" />
+        <layer Id="c4127a67-38f2-4b76-b85e-66885da412bf" name="FourWeb.Abstraction.ExternalServices" />
+      </childLayers>
+    </layer>
+    <layer Id="23583ef3-70b3-4308-8b4f-0e96593818ef" name="Components">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="b28474a6-47c1-4f95-b1e4-8cc7ab035c7d" direction="Bidirectional">
+          <layerMoniker Id="2051f428-d966-45d5-a2a8-99b2936512e6" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="f31e57bf-d8fc-454b-b968-54a199c0d129" name="FourWeb.Business.Identity" />
+        <layer Id="2ccdc478-8986-4896-b329-df5bdb5dbce1" name="FourWeb.Business.Report" />
+        <layer Id="d3377750-6fbb-401b-9ca8-c3f631747cf4" name="FourWeb.Business.Manager" />
+        <layer Id="a89d26ae-0b5c-4b94-8a9c-54c9dccfd3b6" name="FourWeb.Business.Shop" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>
