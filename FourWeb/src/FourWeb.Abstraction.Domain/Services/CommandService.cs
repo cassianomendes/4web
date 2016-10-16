@@ -32,5 +32,10 @@ namespace FourWeb.Abstraction.Domain.Services
             _repository.Delete(entity);
             _repository.Save();
         }
+
+        public virtual T GetById(int id)
+        {
+            return _repository.GetById(id);
+        }
     }
 }

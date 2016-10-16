@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FourWeb.Business.Identity.Extensions;
 using FourWeb.Business.Manager.Extensions;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,7 @@ namespace FourWeb.Abstraction.Bootstrap.Extensions
             var configuration = new MapperConfiguration(c =>
             {
                 c.AddManagerMappings();
+                c.AddIdentityMappings();
             });
 
             services.AddSingleton<IMapper>(new Mapper(configuration));
@@ -26,6 +28,7 @@ namespace FourWeb.Abstraction.Bootstrap.Extensions
             services.AddAutoMapper();
 
             services.AddManager();
+            services.AddIdentity();
         }
     }
 }
