@@ -8,6 +8,7 @@ namespace FourWeb.Business.Shop.Controllers
     [Route("api/[controller]")]
     public class ShippingController : Controller
     {
+        private const string _defaultSourcePostalCode = "95760000";
         private readonly CorreiosService _correiosService;
 
         public ShippingController(CorreiosService correiosService)
@@ -15,10 +16,20 @@ namespace FourWeb.Business.Shop.Controllers
             _correiosService = correiosService;
         }
 
-        [HttpGet]
-        public IActionResult Get([FromBody]ShippingInputModel inputModel)
+        [HttpPost]
+        public IActionResult Post([FromBody]ShippingInputModel inputModel)
         {
-            // TODO: Chamar serviço de cálculo de frete
+            var result = _correiosService.CalculatePriceAndDeadlineAsync(
+                _defaultSourcePostalCode,
+                inputModel.PostalCode,
+                20,
+                10,
+                10,
+                10,
+                10).Result;
+
+            // TODO: Informações de endereço referente ao CEP informado
+
             var viewModel = new ShippingViewModel
             {
                 Address = new ShippingAddressViewModel
@@ -27,11 +38,9 @@ namespace FourWeb.Business.Shop.Controllers
                     City = "Bergamota City",
                     Address = "Rua das Bergamotas"
                 },
-                ShippingPrice = 15,
-                TotalWeekdays = 7
+                ShippingPrice = result.Valor,
+                TotalWeekdays = result.PrazoEntrega
             };
-
-            //_correiosService.CalculatePriceAndDeadline()
 
             return Ok(viewModel);
         }

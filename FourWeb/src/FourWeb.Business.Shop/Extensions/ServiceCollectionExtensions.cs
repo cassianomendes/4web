@@ -13,7 +13,7 @@ namespace FourWeb.Business.Shop.Extensions
         {
             services.AddDbContext<ShopContext>();
         }
-        public static void AddManager(this IServiceCollection services)
+        public static void AddShop(this IServiceCollection services)
         {
             services.AddShopContexts();
 

@@ -1,12 +1,8 @@
 ﻿using AutoMapper;
 using FourWeb.Business.Identity.Extensions;
 using FourWeb.Business.Manager.Extensions;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+using FourWeb.Business.Shop.Extensions;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FourWeb.Abstraction.Bootstrap.Extensions
 {
@@ -27,8 +23,9 @@ namespace FourWeb.Abstraction.Bootstrap.Extensions
         {            
             services.AddAutoMapper();
 
-            services.AddManager();
             services.AddIdentity();
+            services.AddManager();
+            services.AddShop();
         }
     }
 }
