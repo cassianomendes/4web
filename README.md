@@ -13,6 +13,7 @@ UC005 - Finalizar Compra
 ## Identificação do Ambiente 
 
 Por variável de ambiente:
+
 ASPNETCORE_Environment => Production
 
 ASPNETCORE_Environment => Staging
