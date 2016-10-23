@@ -1,6 +1,5 @@
 
 # FourWeb
-Nesta 
 
 ## Identificação dos Artefatos 
 UC001 - Gerenciar Produto 
