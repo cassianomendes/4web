@@ -2,20 +2,21 @@
 using FourWeb.Business.Shop.Data.Contexts;
 using FourWeb.Business.Shop.Domain.Entities;
 using FourWeb.Business.Shop.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace FourWeb.Business.Shop.Data.Repositories
 {
-    public class ShoppingCartRepository : RepositoryBase<ShoppingCart>, IShoppingCartRepository
+    public class CustomerRepositoryQuery : RepositoryQueryBase<Customer>, ICustomerRepositoryQuery
     {
-        public ShoppingCartRepository(ShopContext context)
+        public CustomerRepositoryQuery(ShopContext context)
             : base(context)
         {
         }
 
-        public ShoppingCart GetByCustomer(int id)
+        public Customer GetByEmail(string email)
         {
-            return Entity.SingleOrDefault(x => x.Customer.Id == id);
+            return Entity.AsNoTracking().FirstOrDefault(x => x.Email == email);
         }
     }
 }

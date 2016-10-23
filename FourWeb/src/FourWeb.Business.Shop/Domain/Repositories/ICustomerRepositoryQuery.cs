@@ -3,8 +3,8 @@ using FourWeb.Business.Shop.Domain.Entities;
 
 namespace FourWeb.Business.Shop.Domain.Repositories
 {
-    public interface IShoppingCartRepository : IRepositoryBase<ShoppingCart>
+    public interface ICustomerRepositoryQuery : IRepositoryQueryBase<Customer>
     {
-        ShoppingCart GetByCustomer(int id);
+        Customer GetByEmail(string email);
     }
 }

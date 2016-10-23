@@ -17,8 +17,14 @@ namespace FourWeb.Business.Shop.Extensions
         {
             services.AddShopContexts();
 
-            services.AddScoped<ShoppingCartService>();
+            // Repositories
+            services.AddScoped<ICustomerRepositoryQuery, CustomerRepositoryQuery>();
             services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
+
+            // Services
+            services.AddScoped<ShoppingCartService>();
+
+            // External Services
             services.AddScoped<CorreiosService>();
         }
     }
