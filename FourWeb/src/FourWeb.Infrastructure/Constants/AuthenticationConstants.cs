@@ -8,5 +8,6 @@ namespace FourWeb.Infrastructure.Constants
     public static class AuthenticationConstants
     {
         public const string FourWebAuthenticationScheme = "Bearer";
+        public const string FourWebAuthenticationPolicy = "TokenPolicy";
     }
 }

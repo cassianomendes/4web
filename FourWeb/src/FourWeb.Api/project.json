@@ -17,8 +17,7 @@
     "FourWeb.Abstraction.Bootstrap": "1.0.0-*",
     "FourWeb.Abstraction.Auth": "1.0.0-*",
     "Swashbuckle.SwaggerUi": "6.0.0-beta902",
-    "Swashbuckle.SwaggerGen": "6.0.0-beta902",
-    "AspNet.Security.OAuth.Validation": "1.0.0-alpha2-final"
+    "Swashbuckle.SwaggerGen": "6.0.0-beta902"    
   },
 
   "tools": {

@@ -1,6 +1,7 @@
 ﻿using FourWeb.Abstraction.Domain.Entities;
 using FourWeb.Business.Identity.Domain.Services;
 using FourWeb.Infrastructure.Constants;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -9,18 +10,17 @@ using System.Net;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http.Authentication;
-using Microsoft.AspNetCore.Http.Features.Authentication;
 
 namespace FourWeb.Business.Identity.Middlewares
 {
     public class FourWebAuthMiddleware 
     {
         private readonly RequestDelegate _next;
+        private readonly IAuthorizationService _authorization;
         private UserService _userService;
-        public FourWebAuthMiddleware(RequestDelegate next)
+        public FourWebAuthMiddleware(RequestDelegate next, IAuthorizationService authorization)
         {
+            _authorization = authorization;
             _next = next;
         }
 
@@ -52,7 +52,7 @@ namespace FourWeb.Business.Identity.Middlewares
         {
             var bearer = token.Split(' ');
             if (bearer.Length < 2) return Unauthorized(context, "Invalid authorization format");
-
+            
             var clear = Encoding.UTF8.GetString(Convert.FromBase64String(bearer[1]));
             
             var parts = clear.Split(':');
@@ -63,16 +63,30 @@ namespace FourWeb.Business.Identity.Middlewares
             var user = _userService.GetByUsername(email);
             if (user == null) return Unauthorized(context, "User has no access. Please register.");
 
-            var principal = await context.Authentication.AuthenticateAsync(AuthenticationConstants.FourWebAuthenticationScheme);
-        
-            context.User = principal;
+            context.User = CreateClaimsPrincipal(user);
 
-            return true;
+            return await _authorization.AuthorizeAsync(context.User, AuthenticationConstants.FourWebAuthenticationPolicy);            
         }
 
         private ClaimsPrincipal CreateClaimsPrincipal(User user)
         {
-            return null;
+            var claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.GivenName, user.Email),
+                new Claim(ClaimTypes.Name, user.Email),
+                new Claim(ClaimTypes.NameIdentifier, user.Email),
+                new Claim(ClaimTypes.Upn, user.Id.ToString())
+            };
+            var identity = new ClaimsIdentity(claims, "Password");
+            //identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
+            //identity.AddClaim(new Claim(ClaimTypes.GivenName, user.Email));
+            //identity.AddClaim(new Claim(ClaimTypes.Name, user.Email));
+            //identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Email));
+            //identity.AddClaim(new Claim(ClaimTypes.Upn, user.Id.ToString()));
+            var principal = new ClaimsPrincipal(identity);
+
+            return principal;
         }
 
         private bool Unauthorized(HttpContext context, string error)
