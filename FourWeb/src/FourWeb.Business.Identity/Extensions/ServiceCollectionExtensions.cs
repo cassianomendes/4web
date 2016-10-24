@@ -2,11 +2,8 @@
 using FourWeb.Business.Identity.Data.Repositories;
 using FourWeb.Business.Identity.Domain.Repositories;
 using FourWeb.Business.Identity.Domain.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FourWeb.Business.Identity.Extensions
 {

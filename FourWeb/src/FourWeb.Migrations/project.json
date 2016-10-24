@@ -15,7 +15,7 @@
     "FourWeb.Abstraction.Domain": "1.0.0-*",
     "FourWeb.Business.Manager": "1.0.0-*",
     "FourWeb.Business.Report": "1.0.0-*",
-    "FourWeb.Business.Shop": "1.0.0-*"
+    "FourWeb.Business.Shop": "1.0.0-*"    
   },
 
   "tools": {
