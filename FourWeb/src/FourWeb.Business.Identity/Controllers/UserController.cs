@@ -7,10 +7,12 @@ using FourWeb.Business.Identity.InputModels;
 using FourWeb.Business.Identity.Domain.Services;
 using AutoMapper;
 using FourWeb.Abstraction.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
+using FourWeb.Infrastructure.Constants;
 
 namespace FourWeb.Business.Identity.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")]    
     public class UserController : Controller
     {
         private readonly UserService _userService;
@@ -21,19 +23,11 @@ namespace FourWeb.Business.Identity.Controllers
             _userService = userService;
         }
 
-        [HttpPost]
-        public IActionResult Post(UserInputModel inputModel)
-        {
-            var user = _mapper.Map<User>(inputModel);
-            _userService.Create(user);
-
-            return Ok();
-        }
-
         [HttpGet("{id:int}")]
         public IActionResult Get(int id)
         {
-            //to view model
+            var user = User;
+
             return Ok(_userService.GetById(id));
         }
     }

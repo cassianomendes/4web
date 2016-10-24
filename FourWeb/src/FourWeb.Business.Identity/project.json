@@ -6,7 +6,8 @@
     "FourWeb.Abstraction.Data": "1.0.0-*",
     "FourWeb.Abstraction.Domain": "1.0.0-*",
     "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
-    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0"
+    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
+    "Microsoft.AspNetCore.Authentication": "1.0.0"
   },
 
   "frameworks": {

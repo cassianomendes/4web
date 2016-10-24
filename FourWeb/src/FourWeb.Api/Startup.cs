@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using FourWeb.Abstraction.Bootstrap.Extensions;
+using FourWeb.Business.Identity.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using FourWeb.Abstraction.Bootstrap.Extensions;
 
 namespace FourWeb.Api
 {
@@ -41,6 +38,8 @@ namespace FourWeb.Api
 
             app.UseSwagger();
             app.UseSwaggerUi();
+
+            app.UseFourWebAuth();
 
             app.UseMvc();
         }
