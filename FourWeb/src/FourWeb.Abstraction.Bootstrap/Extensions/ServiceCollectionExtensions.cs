@@ -2,6 +2,7 @@
 using FourWeb.Business.Identity.Extensions;
 using FourWeb.Business.Manager.Extensions;
 using FourWeb.Business.Shop.Extensions;
+using FourWeb.ExternalServices.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FourWeb.Abstraction.Bootstrap.Extensions
@@ -23,6 +24,7 @@ namespace FourWeb.Abstraction.Bootstrap.Extensions
         {            
             services.AddAutoMapper();
 
+            services.AddExternalServices();
             services.AddIdentity();
             services.AddManager();
             services.AddShop();

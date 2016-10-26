@@ -23,7 +23,7 @@ namespace FourWeb.Business.Shop.Controllers
         public IActionResult Post([FromBody]ShippingInputModel inputModel)
         {
             var shoppingCart = _shoppingCartService.GetByCustomer(User.Identity.Name);
-            var product= shoppingCart.GetGreaterProduct();
+            var product= shoppingCart.GetBiggerProduct();
 
             var result = _correiosService.CalculatePriceAndDeadlineAsync(
                 _defaultSourcePostalCode,
@@ -32,7 +32,7 @@ namespace FourWeb.Business.Shop.Controllers
                 product.GetLength(),
                 product.GetHeight(),
                 product.GetWidth(),
-                product.GetDiameter()).Result;
+                product.GetDiagonal()).Result;
 
             var viewModel = new ShippingViewModel
             {

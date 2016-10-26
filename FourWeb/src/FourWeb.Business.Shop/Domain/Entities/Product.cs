@@ -23,35 +23,33 @@ namespace FourWeb.Business.Shop.Domain.Entities
         }
 
 
-        public decimal GetWeightInKg()
+        public double GetWeightInKg()
         {
-            return Convert.ToDecimal(this.TechnicalDetails.Single(x => x.Title == "Peso"));
+            return Convert.ToDouble(this.TechnicalDetails.Single(x => x.Title == "Peso"));
         }
 
-        public decimal GetLength()
+        public double GetLength()
         {
-            return Convert.ToDecimal(this.TechnicalDetails.Single(x => x.Title == "Comprimento"));
+            return Convert.ToDouble(this.TechnicalDetails.Single(x => x.Title == "Comprimento"));
         }
 
-        public decimal GetHeight()
+        public double GetHeight()
         {
-            return Convert.ToDecimal(this.TechnicalDetails.Single(x => x.Title == "Altura"));
+            return Convert.ToDouble(this.TechnicalDetails.Single(x => x.Title == "Altura"));
         }
 
-        public decimal GetWidth()
+        public double GetWidth()
         {
-            return Convert.ToDecimal(this.TechnicalDetails.Single(x => x.Title == "Largura"));
+            return Convert.ToDouble(this.TechnicalDetails.Single(x => x.Title == "Largura"));
         }
 
-        public decimal GetDiameter()
+        public double GetDiagonal()
         {
             var length = this.GetLength();
             var width = this.GetWidth();
             var height = this.GetHeight();
 
-            // TODO: Cálculo diâmetro
-
-            throw new NotImplementedException();
+            return Math.Sqrt((length * length) + (width * width) + (height * height));
         }
     }
 }

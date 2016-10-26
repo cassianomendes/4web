@@ -2,7 +2,6 @@
 using FourWeb.Business.Shop.Data.Repositories;
 using FourWeb.Business.Shop.Domain.Repositories;
 using FourWeb.Business.Shop.Domain.Services;
-using FourWeb.ExternalServices.Correios;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FourWeb.Business.Shop.Extensions
@@ -19,13 +18,14 @@ namespace FourWeb.Business.Shop.Extensions
 
             // Repositories
             services.AddScoped<ICustomerRepositoryQuery, CustomerRepositoryQuery>();
+            services.AddScoped<IDiscountCouponRepositoryQuery, DiscountCouponRepositoryQuery>();
+            services.AddScoped<IOrderRepositoryQuery, OrderRepositoryQuery>();
             services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 
             // Services
+            services.AddScoped<CouponService>();
+            services.AddScoped<OrderService>();
             services.AddScoped<ShoppingCartService>();
-
-            // External Services
-            services.AddScoped<CorreiosService>();
         }
     }
 }

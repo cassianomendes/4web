@@ -60,24 +60,24 @@ namespace FourWeb.Business.Shop.Domain.Entities
                 this.ShoppingCartItems.Remove(item);
         }
 
-        public Product GetGreaterProduct()
+        public Product GetBiggerProduct()
         {
             if (this.ShoppingCartItems.Count == 0)
                 return null;
 
-            var greater = this.ShoppingCartItems.First();
+            var bigger = this.ShoppingCartItems.First();
 
             foreach (var item in this.ShoppingCartItems)
             {
-                var diameterCurrentItem = item.Product.GetDiameter();
-                var diameterGreaterItem = greater.Product.GetDiameter();
-                if (diameterCurrentItem > diameterGreaterItem)
+                var diagonalCurrentItem = item.Product.GetDiagonal();
+                var diagonalBiggerItem = bigger.Product.GetDiagonal();
+                if (diagonalCurrentItem > diagonalBiggerItem)
                 {
-                    greater = item;
+                    bigger = item;
                 }
             }
 
-            return greater.Product;
+            return bigger.Product;
         }
     }
 }
