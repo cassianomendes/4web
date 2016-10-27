@@ -17,8 +17,7 @@
     "FourWeb.Abstraction.Bootstrap": "1.0.0-*",
     "FourWeb.Abstraction.Auth": "1.0.0-*",
     "Swashbuckle.SwaggerUi": "6.0.0-beta902",
-    "Swashbuckle.SwaggerGen": "6.0.0-beta902",
-    "dnx-clr-win-x86": "1.0.0-rc1-update2"
+    "Swashbuckle.SwaggerGen": "6.0.0-beta902"
   },
 
   "tools": {
