@@ -3,8 +3,8 @@ using FourWeb.Business.Shop.Domain.Entities;
 
 namespace FourWeb.Business.Shop.Domain.Repositories
 {
-    public interface IShoppingCartRepository : IRepositoryBase<ShoppingCart>
+    public interface IDiscountCouponRepositoryQuery : IRepositoryQueryBase<DiscountCoupon>
     {
-        ShoppingCart GetByCustomer(int id);
+        DiscountCoupon GetByCode(string code);
     }
 }

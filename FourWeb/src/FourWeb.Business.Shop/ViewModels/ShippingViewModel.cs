@@ -4,7 +4,7 @@
     {
         public int TotalWeekdays { get; set; }
         public decimal ShippingPrice { get; set; }
-        public ShippingAddressViewModel Address { get; set; }
+        //public ShippingAddressViewModel Address { get; set; }
 
     }
 }

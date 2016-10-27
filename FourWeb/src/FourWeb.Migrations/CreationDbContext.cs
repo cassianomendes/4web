@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FourWeb.Migrations
 {
-    public class CreationDbContext : DbContext
+    public class CreationDbContext :  DbContext
     {
         private readonly string _connectionString;
         public CreationDbContext()

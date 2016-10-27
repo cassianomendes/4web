@@ -2,11 +2,9 @@
 using FourWeb.Business.Identity.Data.Repositories;
 using FourWeb.Business.Identity.Domain.Repositories;
 using FourWeb.Business.Identity.Domain.Services;
+using FourWeb.Infrastructure.Constants;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FourWeb.Business.Identity.Extensions
 {
@@ -21,7 +19,11 @@ namespace FourWeb.Business.Identity.Extensions
             services.AddIdentityContexts();
 
             services.AddScoped<UserService>();
-            services.AddScoped<IUserRepository, UserRepository>();            
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddAuthorization(a => a.AddPolicy(AuthenticationConstants.FourWebAuthenticationPolicy,
+                builder => builder.AddAuthenticationSchemes(AuthenticationConstants.FourWebAuthenticationScheme)
+                                  .RequireAuthenticatedUser().Build()));
         }
     }
 }

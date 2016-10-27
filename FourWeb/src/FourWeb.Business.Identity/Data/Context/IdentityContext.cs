@@ -17,6 +17,11 @@ namespace FourWeb.Business.Identity.Data.Context
             _connectionString = configuration[DatabaseConstants.ConnectionStringKey];
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(_connectionString);
+            base.OnConfiguring(optionsBuilder);
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasDiscriminator<bool>("IsCustomer").HasValue(false);   

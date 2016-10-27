@@ -4,6 +4,10 @@ using System.Threading.Tasks;
 
 namespace FourWeb.ExternalServices.Correios
 {
+    /// <summary>
+    /// Implementação do Web Service dos Correios baseada na especificação.
+    /// <seealso cref="https://www.correios.com.br/para-sua-empresa/servicos-para-o-seu-contrato/precos-e-prazos"/>
+    /// </summary>
     public class CorreiosService
     {
         private const string BASE_ADDRESS = "http://ws.correios.com.br/calculador/";
@@ -11,11 +15,11 @@ namespace FourWeb.ExternalServices.Correios
         public async Task<CorreiosResult> CalculatePriceAndDeadlineAsync(
             string sourcePostalCode,
             string destPostalCode,
-            decimal weightInKg,
-            decimal length,
-            decimal height,
-            decimal width,
-            decimal diameter,
+            double weightInKg,
+            double length,
+            double height,
+            double width,
+            double diameter,
             CorreiosServiceType serviceType = CorreiosServiceType.PAC_Varejo)
         {
             // Valores fixos utilizados para qualquer requisição

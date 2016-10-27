@@ -9,5 +9,6 @@ namespace FourWeb.Business.Identity.Domain.Repositories
 {
     public interface IUserRepository : IRepositoryBase<User>
     {
+        User GetByUsername(string userName);
     }
 }

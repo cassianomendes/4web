@@ -6,16 +6,16 @@ using System.Linq;
 
 namespace FourWeb.Business.Shop.Data.Repositories
 {
-    public class ShoppingCartRepository : RepositoryBase<ShoppingCart>, IShoppingCartRepository
+    public class DiscountCouponRepositoryQuery : RepositoryQueryBase<DiscountCoupon>, IDiscountCouponRepositoryQuery
     {
-        public ShoppingCartRepository(ShopContext context)
+        public DiscountCouponRepositoryQuery(ShopContext context)
             : base(context)
         {
         }
 
-        public ShoppingCart GetByCustomer(int id)
+        public DiscountCoupon GetByCode(string code)
         {
-            return Entity.SingleOrDefault(x => x.Customer.Id == id);
+            return base.Entity.SingleOrDefault(x => x.Code == code);
         }
     }
 }

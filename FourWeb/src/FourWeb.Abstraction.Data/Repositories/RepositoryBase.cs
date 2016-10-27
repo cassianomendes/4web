@@ -1,9 +1,6 @@
 ﻿using FourWeb.Abstraction.Domain.Entities;
 using FourWeb.Abstraction.Domain.Interfaces.Repositories;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace FourWeb.Abstraction.Data.Repositories
@@ -15,9 +12,10 @@ namespace FourWeb.Abstraction.Data.Repositories
         {
 
         }
-        public void Add(T entity)
+        public T Add(T entity)
         {
-            Entity.Add(entity);
+            var entry = Entity.Add(entity);
+            return entry.Entity;
         }
 
         public void Delete(T entity)

@@ -16,5 +16,10 @@ namespace FourWeb.Business.Identity.Data.Repositories
         {
 
         }
+
+        public User GetByUsername(string userName)
+        {
+            return Entity.Where(u => u.Email.Equals(userName)).FirstOrDefault();
+        }
     }
 }
