@@ -31,7 +31,7 @@ namespace FourWeb.Business.Shop.Extensions
             services.AddScoped<ShoppingCartService>();
             services.AddScoped<AddressService>();
             services.AddScoped<OrderService>();
-
+            services.AddScoped<PaymentMethodService>();            
         }
     }
 }
