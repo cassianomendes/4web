@@ -21,5 +21,14 @@ namespace FourWeb.Business.Shop.Domain.Services
             var coupon = _discountCouponRepositoryQuery.GetByCode(code);
             return order.Total - (order.Total * coupon.Discount);
         }
+
+        public decimal CalculateDiscount(string code, ShoppingCart shoppingCart)
+        {
+            if (code == null) throw new ArgumentNullException(nameof(code));
+            if (shoppingCart == null) throw new ArgumentNullException(nameof(shoppingCart));
+
+            var coupon = _discountCouponRepositoryQuery.GetByCode(code);
+            return shoppingCart.Total - (shoppingCart.Total * coupon.Discount);
+        }
     }
 }

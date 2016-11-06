@@ -10,19 +10,19 @@ namespace FourWeb.Business.Shop.Controllers
     public class CouponController : Controller
     {
         private readonly CouponService _couponService;
-        private readonly OrderService _orderService;
+        private readonly ShoppingCartService _shoppingCartService;
 
-        public CouponController(CouponService couponService, OrderService orderService)
+        public CouponController(CouponService couponService, ShoppingCartService shoppingCartService)
         {
             _couponService = couponService;
-            _orderService = orderService;
+            _shoppingCartService = shoppingCartService;
         }
 
         [HttpPost]
         public IActionResult Post([FromBody] CalcDiscountCouponInputModel inputModel)
         {
-            var order = _orderService.GetById(inputModel.OrderId);
-            return Ok(_couponService.CalculateDiscount(inputModel.Code, order));
+            var shoppingCart = _shoppingCartService.GetByCustomer(User.Identity.Name);
+            return Ok(_couponService.CalculateDiscount(inputModel.Code, shoppingCart));
         }
     }
 }

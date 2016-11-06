@@ -12,6 +12,14 @@ namespace FourWeb.Business.Shop.Domain.Entities
         public Product Product { get; private set; }
         public int Quantity { get; private set; }
 
+        public decimal Subtotal
+        {
+            get
+            {
+                return this.Product.Price * this.Quantity;
+            }
+        }
+
         public void UpdateQuantity(int quantity)
         {
             this.Quantity = quantity;

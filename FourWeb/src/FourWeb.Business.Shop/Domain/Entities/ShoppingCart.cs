@@ -22,6 +22,14 @@ namespace FourWeb.Business.Shop.Domain.Entities
         public Customer Customer { get; private set; }
         public int CustomerId { get; private set; }
 
+        public decimal Total
+        {
+            get
+            {
+                return ShoppingCartItems.Sum(x => x.Subtotal);
+            }
+        }
+
         public static ShoppingCart Create(int customerId)
         {
             return new ShoppingCart()
