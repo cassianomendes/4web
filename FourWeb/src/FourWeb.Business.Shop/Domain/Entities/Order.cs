@@ -13,26 +13,28 @@ namespace FourWeb.Business.Shop.Domain.Entities
 
         }
 
-        public Order(IList<OrderItem> orderItems, int customer)
+        protected Order(IList<OrderItem> orderItems, Customer customer)
         {
             this.Date = DateTime.Now;            
             orderItems.ToList().ForEach(x => AddItem(x));
-            this.CustomerId = customer;
+            this.CustomerId = customer.Id;
+            Customer = customer;
+            this.Status = OrderStatus.Created;
+        }
+
+        protected Order(Customer customer)
+        {
+            this.Date = DateTime.Now;            
+            Customer = customer;
             this.Status = OrderStatus.Created;
         }
 
         public DateTime Date { get; private set; }
         public ICollection<OrderItem> OrderItems { get; private set; }
-        public int CustomerId { get; set; }
-        public Customer Customer { get; set; }        
-        public decimal Total
-        {
-            get
-            {
-                return OrderItems.Sum(x => x.Subtotal);
-            }
-        }
-        public OrderStatus Status { get; set; }
+        public int CustomerId { get; private set; }
+        public Customer Customer { get; private set; }        
+        public decimal Total { get; private set; }
+        public OrderStatus Status { get; private set; }
 
         public int PaymentId { get; private set; }
         public Payment Payment { get; private set; }
@@ -42,12 +44,14 @@ namespace FourWeb.Business.Shop.Domain.Entities
         public int ShippingId { get; private set; }
         public Shipping Shipping { get; private set; }
 
-        public int DiscountCouponId { get; set; }
+        public int DiscountCouponId { get; private set; }
         public DiscountCoupon DiscountCoupon { get; private set; }
 
         public void AddItem(OrderItem item)
         {
             OrderItems.Add(item);
+
+            Total += item.Subtotal;
         }
 
         public void MarkAsPaid()
@@ -66,6 +70,43 @@ namespace FourWeb.Business.Shop.Domain.Entities
             // Estorna os produtos
             // ...
             this.Status = OrderStatus.Canceled;
+        }
+
+        public void ApplyDiscountCoupon(DiscountCoupon coupon)
+        {
+            DiscountCoupon = coupon;
+            DiscountCouponId = coupon.Id;
+
+            Total -= Total * coupon.Discount;
+        }
+
+        public void ChangePayment(Payment payment)
+        {
+            if (payment == null) throw new ArgumentNullException(nameof(payment));
+
+            Payment = payment;
+            PaymentId = payment.Id;
+        }
+
+        public void ChangePaymentMethod(PaymentMethod paymentMethod)
+        {
+            if (paymentMethod == null) throw new ArgumentNullException(nameof(paymentMethod));
+
+            PaymentMethod = paymentMethod;
+            PaymentMethodId = paymentMethod.Id;
+        }
+
+        public void ChangeShipping(Shipping shipping)
+        {
+            if (shipping == null) throw new ArgumentNullException(nameof(shipping));
+
+            Shipping = shipping;
+            ShippingId = shipping.Id;
+        }
+
+        public static Order Create(Customer customer)
+        {
+            return new Order(customer);
         }
     }
 }

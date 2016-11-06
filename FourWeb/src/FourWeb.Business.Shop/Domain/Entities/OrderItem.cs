@@ -36,5 +36,18 @@ namespace FourWeb.Business.Shop.Domain.Entities
             // Reserva o estoque
             this.Product.UpdateQuantityOnHand(this.Product.QuantityOnHand - quantity);
         }
+
+        public static OrderItem Create(Order order, Product product, int quantity)
+        {
+            return new OrderItem()
+            {
+                Product = product,
+                ProductId = product.Id,
+                Quantity = quantity,
+                Order = order,
+                OrderId = order.Id,
+                UnitCost = product.Price
+            };
+        }
     }
 }

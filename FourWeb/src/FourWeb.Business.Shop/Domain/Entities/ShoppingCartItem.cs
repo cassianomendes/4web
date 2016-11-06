@@ -24,5 +24,15 @@ namespace FourWeb.Business.Shop.Domain.Entities
         {
             this.Quantity = quantity;
         }
+
+        public static ShoppingCartItem Create(Product product, int quantity)
+        {
+            return new ShoppingCartItem()
+            {
+                Product = product,
+                ProductId = product.Id,
+                Quantity = quantity
+            };
+        }
     }
 }

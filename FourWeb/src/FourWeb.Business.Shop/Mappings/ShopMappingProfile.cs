@@ -40,6 +40,8 @@ namespace FourWeb.Business.Shop.Mappings
                     dest => dest.Quantity,
                     opt => opt.MapFrom(src => src.Quantity)
                 );
+
+            CreateMap<CreditCardInputModel, CreditCard>().ConvertUsing(new CreditCardTypeConverter());
         }
     }
 }

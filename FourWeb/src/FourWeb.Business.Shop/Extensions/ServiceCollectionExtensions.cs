@@ -20,12 +20,18 @@ namespace FourWeb.Business.Shop.Extensions
             services.AddScoped<ICustomerRepositoryQuery, CustomerRepositoryQuery>();
             services.AddScoped<IDiscountCouponRepositoryQuery, DiscountCouponRepositoryQuery>();
             services.AddScoped<IOrderRepositoryQuery, OrderRepositoryQuery>();
-            services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
+            services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();            
+            services.AddScoped<IAddressRepositoryQuery, AddressRepositoryQuery>();
+            services.AddScoped<IPaymentMethodRepositoryQuery, PaymentMethodRepositoryQuery>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
 
             // Services
             services.AddScoped<CouponService>();
             services.AddScoped<OrderService>();
             services.AddScoped<ShoppingCartService>();
+            services.AddScoped<AddressService>();
+            services.AddScoped<OrderService>();
+
         }
     }
 }
