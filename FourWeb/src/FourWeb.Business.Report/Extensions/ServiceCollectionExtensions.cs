@@ -1,4 +1,7 @@
 ﻿using FourWeb.Business.Report.Data.Contexts;
+using FourWeb.Business.Report.Data.Repositories;
+using FourWeb.Business.Report.Domain.Repositories;
+using FourWeb.Business.Report.Domain.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FourWeb.Business.Report.Extensions
@@ -12,6 +15,13 @@ namespace FourWeb.Business.Report.Extensions
         public static void AddReport(this IServiceCollection services)
         {
             services.AddReportContexts();
+
+            // Repositories
+            services.AddScoped<ICustomerRepositoryQuery, CustomerRepositoryQuery>();
+            services.AddScoped<IOrderRepositoryQuery, OrderRepositoryQuery>();
+
+            // Services
+            services.AddScoped<OrderService>();
         }
     }
 }
