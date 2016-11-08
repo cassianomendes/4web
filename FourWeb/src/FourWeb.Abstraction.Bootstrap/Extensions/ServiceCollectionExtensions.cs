@@ -14,8 +14,10 @@ namespace FourWeb.Abstraction.Bootstrap.Extensions
         {
             var configuration = new MapperConfiguration(c =>
             {
-                c.AddManagerMappings();
                 c.AddIdentityMappings();
+                c.AddManagerMappings();
+                c.AddReportMappings();
+                c.AddShopMappings();
             });
 
             services.AddSingleton<IMapper>(new Mapper(configuration));
