@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FourWeb.Business.Identity.Extensions;
 using FourWeb.Business.Manager.Extensions;
+using FourWeb.Business.Report.Extensions;
 using FourWeb.Business.Shop.Extensions;
 using FourWeb.ExternalServices.Extensions;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,8 +14,10 @@ namespace FourWeb.Abstraction.Bootstrap.Extensions
         {
             var configuration = new MapperConfiguration(c =>
             {
-                c.AddManagerMappings();
                 c.AddIdentityMappings();
+                c.AddManagerMappings();
+                c.AddReportMappings();
+                c.AddShopMappings();
             });
 
             services.AddSingleton<IMapper>(new Mapper(configuration));
@@ -27,6 +30,7 @@ namespace FourWeb.Abstraction.Bootstrap.Extensions
             services.AddExternalServices();
             services.AddIdentity();
             services.AddManager();
+            services.AddReport();
             services.AddShop();
         }
     }

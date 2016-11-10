@@ -3,6 +3,5 @@
     public class CalcDiscountCouponInputModel
     {
         public string Code { get; set; }
-        public int OrderId { get; set; }
     }
 }
