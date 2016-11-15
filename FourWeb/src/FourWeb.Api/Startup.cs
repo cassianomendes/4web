@@ -38,6 +38,9 @@ namespace FourWeb.Api
 
             app.UseSwagger();
             app.UseSwaggerUi();
+            app.UseCors(c => c.AllowAnyOrigin()
+                              .AllowAnyHeader()
+                              .AllowAnyMethod());
 
             app.UseFourWebAuth();
 
