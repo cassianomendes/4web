@@ -10,7 +10,7 @@ namespace FourWeb.Migrations
         public CreationDbContext()
             : base()
         {
-            _connectionString = "Server=(localdb)\\mssqllocaldb;Database=fourweb;Trusted_Connection=True;MultipleActiveResultSets=true";
+            _connectionString = "Server=.\\sqlexpress;Database=fourweb;Trusted_Connection=True;MultipleActiveResultSets=true";
             Database.Migrate();            
         }       
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

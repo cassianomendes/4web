@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using FourWeb.Migrations;
+using FourWeb.Business.Shop.Domain.ValueObjects;
 
 namespace FourWeb.Migrations.Migrations
 {
@@ -13,7 +14,7 @@ namespace FourWeb.Migrations.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
+                .HasAnnotation("ProductVersion", "1.0.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("FourWeb.Abstraction.Domain.Entities.User", b =>
