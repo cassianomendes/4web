@@ -102,6 +102,8 @@ namespace FourWeb.Business.Shop.Domain.Entities
 
             Shipping = shipping;
             ShippingId = shipping.Id;
+
+            Total += shipping.ShippingPrice;
         }
 
         public static Order Create(Customer customer)
