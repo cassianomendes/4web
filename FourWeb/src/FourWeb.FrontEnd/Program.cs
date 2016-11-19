@@ -16,6 +16,7 @@ namespace FourWeb.FrontEnd
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:4000")
                 .Build();
 
             host.Run();
